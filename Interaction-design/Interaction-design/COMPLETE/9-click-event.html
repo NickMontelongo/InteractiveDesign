@@ -38,48 +38,26 @@
       </style>
    </head>
    <body>
+      <input type="button" value="Go!" id="start_btn" />
       <h1>Exercise 8: jQuery Sequencing</h1>
       <h2>Example subheading</h2>
       <div id="div1"></div>
       <div id="div2"></div>
       <div id="div3"></div>
       <script>
-         $(document).ready(function(){
-             // Animate the headline (h1) to 6em size with jQuery
-             $("h1").animate({
-                 opacity: 1,
-                 fontSize: "2em"}, 
-                 2000, "swing");
-         });
-      </script>
-      <script>
-         $(document).ready(function(){
-             $("h2").delay(1750).animate({
-               left:0,  
-               opacity: 1}, 
-               1000, "swing");
-         });
-      </script>
-      <script>
-         $(document).ready(function(){
-             $("#div1").delay(2500).animate({  
-               opacity: 1}, 
-               750, "swing");
-         });
-           
-      </script>
-      <script>
-         $(document).ready(function(){
-             $("#div2").delay(3000).animate({  
-               opacity: 1}, 
-               750, "swing");
-         });
-      </script>
-      <script>
-         $(document).ready(function(){
-             $("#div3").delay(3500).animate({  
-               opacity: 1}, 
-               750, "swing");
+         $(document).ready(function() {
+            // Define the go function to run animations
+            function go() {
+                // Start the animations sequentially when the button is clicked
+                $("h1").animate({ opacity: 1, fontSize: "2em" }, 2000, "swing");
+                $("h2").delay(1750).animate({ left: 0, opacity: 1 }, 1000, "swing");
+                $("#div1").delay(2500).animate({ opacity: 1 }, 750, "swing");
+                $("#div2").delay(3000).animate({ opacity: 1 }, 750, "swing");
+                $("#div3").delay(3500).animate({ opacity: 1 }, 750, "swing");
+            }
+
+            // Set up the click event handler for the "Go!" button
+            $("#start_btn").click(go); 
          });
       </script>
    </body>
