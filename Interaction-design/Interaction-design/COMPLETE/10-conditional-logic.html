@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Exercise 10: Conditional Logic</title>
+    <link href="../resources/reset.css" rel="stylesheet" />
+    <!-- remove prior to turning in --> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!--<script src="../resources/jquery.min.js"></script> -->
+    <meta name="viewport" content="width=device-width">
+    <style>
+        #toggle {
+            width: 60px;
+            height: 30px;
+            background: #A0A0A0;
+            border-radius: 15px;
+            border: 1px solid #666;
+            box-shadow: 3px 3px 5px #444 inset;
+            position: relative;
+        }
+
+        #switch {
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            background: #eee;
+            border-radius: 50%;
+            top: 1px;
+            left: 1px;
+            cursor: pointer;
+        }
+
+        table {
+            margin: auto;
+        }
+
+        #label_on {
+            color: #bbb;
+        }
+
+#slideBox {
+    width: 250px;
+    height: 80px;
+    background-color: #bbb;
+    color: #000;
+    position: fixed;
+    top: 40px;
+    left: -250px; /* Initially hide the box by positioning it off-screen */
+    transition: left 0.3s ease-in-out;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative; /* Add relative positioning to the parent for the absolute child */
+}
+
+.triangle {
+    font-size: 40px;   
+    color: white;      
+    cursor: pointer;
+    position: absolute; /* Position it absolutely within #slideBox */
+    top: -40px;          /* Position- top */
+    right: 0px;        /* Position- right */
+}
+
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Exercise 10: Conditional Logic</h1>
+    <table border="0" cellspacing="5" cellpadding="0">
+
+        <tr>
+            <td id="label_off">OFF</td>
+            <td>
+                <figure id="toggle">
+                    <figcaption id="switch"></figcaption>
+                </figure>
+            </td>
+            <td id="label_on">ON</td>
+        </tr>
+
+    </table>
+
+    <!-- Slide-out box content -->
+<div id="slideBox">
+    <p class="triangle">&#9656;</p>
+    <p>jQuery is cool!</p>
+</div>
+    <script>
+        // Your toggle switch logic
+        function toggleSwitch() {
+            if ($("#switch").css("left") == "1px") {
+                $("#switch").animate({ left: "31px" }, 200, turnOn);
+            } else {
+                $("#switch").animate({ left: "1px" }, 200, turnOff);
+            }
+        }
+
+        function turnOn() {
+            $("#label_on").css("color", "#000");
+            $("#label_off").css("color", "#bbb");
+            $("figure").css("backgroundColor", "#62bb26");
+        }
+
+        function turnOff() {
+            $("#label_on").css("color", "#bbb");
+            $("#label_off").css("color", "#000");
+            $("figure").css("backgroundColor", "#666");
+        }
+
+        $("#switch").click(toggleSwitch);
+      
+
+    $("#slideBox").click(function () {
+        var currentPosition = parseInt($("#slideBox").css("left"));
+        
+        // If the box is off-screen, slide it in, else slide it out
+        if (currentPosition === -250) {
+            $("#slideBox").animate({ left: "0px" }, 300, function() {
+                // Flip the triangle when the box is visible
+                $(".triangle").css("transform", "scaleX(-1)");
+            });
+        } else {
+            $("#slideBox").animate({ left: "-250px" }, 300, function() {
+                // Reset the triangle to its original position when the box is hidden
+                $(".triangle").css("transform", "scaleX(1)");
+            });
+        }
+    });
+    </script>
+
+</body>
+
+</html>
