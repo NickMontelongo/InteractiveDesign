@@ -13,23 +13,38 @@ input[type=checkbox]{
 }
 
 label {
-  curser: pointer;
+  cursor: pointer;  /* Corrected here */
   padding: 3px;
   border:1px solid #A8A8A8;
 }
 
 input[type=checkbox]:checked ~ #target {
-  background:#ffb101
+  background: #ffb101;
 }
 
-#target{
+
+#target {
   transition: background 1.5s ease; 
 }
+
+#zoom {
+  width: 150px; 
+  transition: all 1s ease-in-out;
+}
+
+#zoom:target {
+  width: 400px;
+}
+
        
     </style>
 </head>
 <body>
 <h1>Exercise 5: CSS Click Events</h1>
+  <img src="https://www.mercurygraphics.com/learn/interaction/images/tree-frog.jpg" alt="Placeholder Image" id="zoom">
+  <figcaption>
+    <a href="#zoom">zoom in</a>  |  <a href="#">zoom out</a>
+  </figcaption>
 <input type='checkbox' id='toggle'/>
 <label for='toggle'> Click me!</label>
 <div id='target'>
@@ -38,3 +53,4 @@ input[type=checkbox]:checked ~ #target {
     
 </body>
 </html>
+
