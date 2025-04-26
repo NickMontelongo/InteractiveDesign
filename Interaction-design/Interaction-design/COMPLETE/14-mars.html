@@ -1,6 +1,6 @@
 <!--
    TODO: 4/9/25
-   1)Verify Work and See if theres any bugs -particularly with page 1-
+   1)Fix the scroll Circles (Why theyre not there I have no idea)
    2)Do the following:
    
    Page 4-bullet 9:
@@ -29,7 +29,7 @@
          /*Page 1 stylesheet*/
          #mars {
          width: 100%;
-         height: 100%;
+         height: 40%;
          position: absolute;
          /*Changed per instruction 7
          top: 200px;*/
@@ -53,7 +53,7 @@
          width: 20px;
          height: 20px;
          /*margin-left: -100px;*/
-         top: 100px;
+         top: 190px;
          /*changed values per instruction 7 */
          opacity:0;
          margin-left: -10px;
@@ -113,12 +113,14 @@
       </style>
    </head>
    <body>
-      <ul>
-         <li class="active" data-screen="#screen1"></li>
-         <li data-screen="#screen2"></li>
-         <li data-screen="#screen3"></li>
-         <li data-screen="#screen4"></li>
-      </ul>
+		<nav>
+			<ul>
+				<li class="active" data-screen="#screen1"></li>
+				<li data-screen="#screen2"></li>
+				<li data-screen="#screen3"></li>
+				<li data-screen="#screen4"></li>
+			</ul>
+		</nav>
       <div id="skrollr-body">
          <section id="screen1">
             <h1>Red Planet</h1>
