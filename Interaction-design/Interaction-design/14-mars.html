@@ -1,12 +1,6 @@
 <!--
-   TODO: 4/9/25
-   1)Fix the scroll Circles (Why theyre not there I have no idea)
-   2)Do the following:
-   
-   Page 4-bullet 9:
-   Make the final screen behave as it does in the demo. (use the opportunity.png image).
-   TIP: to make the rover appear to move forward in this scene, animate both its scale and its vertical position, as well as the horizontal position.
-   
+   TODO: 4/26/25
+
    3) Follow Instructions for Submission per Website Guidelines
    -->
 <!DOCTYPE html>
@@ -152,8 +146,8 @@
          <section id="screen4">
             <h2>Mars Rovers</h2>
             <div class="info"data-150-top="left:-25%" data-top="left:0%">Launched in 2003, Opportunity landed on Mars on January 25, 2004 on the other side of Mars from its twin rover Spirit. With a planned 90-day duration of activity, Opportunity is still active, gathering data and making scientific observations, and reporting back to Earth for over 40 times its designed lifespan.</div>
-            <img id="opportunity" src="../resources/opportunity.png" alt="Image of Opportunity" data-anchor-target="#screen4" />
-		 </section>
+            <img id="opportunity" src="../resources/opportunity.png" alt="Image of Opportunity" data-anchor-target="#screen4"  data-bottom-top="transform: translateX(100vw) translateY(100px) scale(0.5);"
+  data-center="transform: translateX(0vw) translateY(0px) scale(1);"  />
       </div>
       <!--check script-->   
       <script>
